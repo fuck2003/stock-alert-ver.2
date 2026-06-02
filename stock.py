@@ -1,5 +1,7 @@
 import requests
 import os
+from datetime import datetime
+
 
 API_KEY = os.environ["FINNHUB_KEY"]
 DINGTALK_WEBHOOK = os.environ["DINGTALK_WEBHOOK"]
@@ -31,7 +33,11 @@ for symbol, target in WATCH_LIST.items():
             }
         }
 
+        
+
         requests.post(
             DINGTALK_WEBHOOK,
             json=msg
         )
+
+f"时间：{datetime.now()}\n"
